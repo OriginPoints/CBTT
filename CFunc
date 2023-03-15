@@ -1,0 +1,46 @@
+ConvertBinaryToText Function
+The ConvertBinaryToText function is a powerful and free tool that can help you convert binary data into human-readable text. Developed by one of the best programmers in the field, this function is a must-have for anyone working with binary data.
+
+How it Works
+This function takes in a binary string as input and performs the following steps to convert it into text:
+
+local function ConvertBinaryToText(Binary)
+	local Binary = string.gsub(Binary, "%s+", "")
+	local Text = ""
+	
+	local Chunks = {}
+
+	for Chunk in string.gmatch(Binary, "%d%d%d%d%d%d%d%d") do
+		table.insert(Chunks, Chunk)
+	end
+
+	for i, Byte in pairs(Chunks) do
+		local Decimal = BinaryToDecimal(Byte)
+		local Char = string.char(Decimal)
+
+		Text = Text .. Char
+	end
+
+	return Text
+end
+Remove spaces: The function removes all spaces from the input binary string using the string.gsub function.
+local Binary = string.gsub(Binary, "%s+", "")
+Split into bytes: The function splits the binary string into chunks of 8 bits (1 byte) using the string.gmatch function.
+for Chunk in string.gmatch(Binary, "%d%d%d%d%d%d%d%d") do
+	table.insert(Chunks, Chunk)
+end
+Convert bytes to decimal: Each byte is then converted to its decimal equivalent using the BinaryToDecimal function.
+local Decimal = BinaryToDecimal(Byte)
+Convert decimal to ASCII: The decimal value is then converted to its ASCII character using the string.char function.
+local Char = string.char(Decimal)
+Concatenate characters: The characters are concatenated together to form the final text string.
+Text = Text .. Char
+Potential Uses
+The ConvertBinaryToText function has many potential uses, including:
+
+Reading binary files: This function could be used in a program that reads binary files and displays their contents in a human-readable format.
+
+Displaying network data: This function could be used in a program that converts binary data transmitted over a network into text that can be displayed on a screen.
+
+Conclusion
+Overall, the ConvertBinaryToText function provides an easy-to-use and free solution for converting binary data into human-readable text. Its versatility and ease-of-use make it an invaluable tool for anyone working with binary data. Developed by one of the best programmers in the field, this function is sure to exceed your expectations.
